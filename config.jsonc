@@ -1,0 +1,135 @@
+[
+  {
+    "position": "bottom",
+    "height": 40,
+    "margin": "0 10 10 10",
+    "reload_style_on_change": true,
+    "modules-left": ["custom/menu", "hyprland/workspaces", "wlr/taskbar"],
+    "modules-right": [
+      "mpris",
+      "cava",
+      "tray",
+      "pulseaudio",
+      "backlight",
+      "power-profiles-daemon",
+      "battery",
+      "clock"
+    ],
+    "custom/menu": {
+      "on-click": "wofi --show drun",
+      "format": "󰣇",
+      "tooltip": false,
+      "menu": "on-click-right",
+      "menu-file": "$HOME/.config/waybar/power_menu.xml",
+      "menu-actions": {
+        "lock": "hyprlock",
+        "log-out": "hyprctl dispatch exit",
+        "shutdown": "systemctl poweroff",
+        "reboot": "reboot",
+        "suspend": "systemctl suspend",
+        "hibernate": "systemctl hibernate"
+      }
+    },
+    "hyprland/workspaces": {
+      "persistent-workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      }
+    },
+    "wlr/taskbar": {
+      "format": "{icon}",
+      "icon-size": 26,
+      "tooltip-format": "{title}",
+      "on-click": "activate",
+      "on-click-middle": "close"
+    },
+    "mpris": {
+      "format": "{status_icon}",
+      "status-icons": {
+        "playing": "  ",
+        "paused": "  "
+      }
+    },
+    "cava": {
+      "framerate": 30,
+      "bars": 14,
+      "bar_delimiter": 0,
+      "method": "pipewire",
+      "monstercat": true,
+      "waves": true,
+      "noise_reduction": 0.2,
+      "reverse": true,
+      "sleep_timer": 5,
+      "hide_on_silence": true,
+      "format-icons": ["█", "▇", "▆", "▅", "▄", "▃", "▃", "▁"],
+      "rotate": 180
+    },
+    "tray": {
+      "icon-size": 20,
+      "spacing": 2,
+      "show-passive-items": true
+    },
+    "pulseaudio": {
+      "scroll-step": 1,
+      "format": "<big>{icon}</big>",
+      "format-muted": "<big></big>",
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+      },
+      "format-source": "󰍬	{volume}%",
+      "format-source-muted": "󰍭	{volume}%",
+      "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+      "on-click-right": "pavucontrol",
+      "tooltip-format": "󰓃	{volume}%\n{format_source}"
+    },
+    "backlight": {
+      "min-brightness": 1,
+      "format": "{icon}",
+      "tooltip-format": "Brightness {percent}%",
+      "format-icons": ["󰃞", "󰃟", "󰃠"],
+      "justify": "center"
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+    "battery": {
+      "states": {
+        "good": 95,
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "<span size='large' >{icon}</span> {capacity}%",
+      "format-alt": "<span size='large' rise='800'>{icon}</span>",
+      "format-full": "<span size='large' rise='800'>{icon}</span>",
+      "format-charging": "<span size='large' >󰂄</span> {capacity}%",
+      "format-plugged": "<span size='large' rise='800'></span>",
+      "tooltip-format": "{capacity}% {timeTo}",
+      "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "justify": "center"
+    },
+    "battery#bat2": {
+      "bat": "BAT2"
+    },
+    "clock": {
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      "format": "{:%H:%M}",
+      "justify": "center"
+    }
+  }
+]

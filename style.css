@@ -1,0 +1,254 @@
+/* catppuccin mocha palette */
+@define-color rosewater       #f4dbd6;
+@define-color flamingo        #f0c6c6;
+@define-color pink            #f5bde6;
+@define-color mauve           #c6a0f6;
+@define-color red             #ed8796;
+@define-color maroon          #ee99a0;
+@define-color peach           #f5a97f;
+@define-color yellow          #eed49f;
+@define-color green           #a6da95;
+@define-color teal            #8bd5ca;
+@define-color sky             #91d7e3;
+@define-color sapphire        #7dc4e4;
+@define-color blue            #8aadf4;
+@define-color lavender        #b7bdf8;
+@define-color text            #cad3f5;
+@define-color subtext1        #b8c0e0;
+@define-color subtext0        #a5adcb;
+@define-color overlay2        #939ab7;
+@define-color overlay1        #8087a2;
+@define-color overlay0        #6e738d;
+@define-color surface2        #5b6078;
+@define-color surface1        #494d64;
+@define-color surface0        #363a4f;
+@define-color base            #24273a;
+@define-color mantle          #1e2030;
+@define-color crust           #181926;
+
+* {
+  border: none;
+  border-radius: 0;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  text-shadow: none;
+  font-family: "Symbols Nerd Font";
+}
+
+window#waybar {
+  color: @text;
+  border-radius: 4px;
+  border: 2px solid @crust;
+  background: @base;
+}
+
+#custom-menu {
+  min-width: 32px;
+  min-height: 32px;
+  margin: 4px;
+  border-radius: 2px;
+  transition-property: color, background-color;
+  transition-duration: 0.2s;
+  font-size: 18px;
+  color: @sky;
+}
+
+#custom-menu:hover {
+  background: @surface0;
+  color: @red;
+}
+
+#workspaces button {
+  padding: 0;
+  margin: 0;
+  min-width: 32px;
+  min-height: 28px;
+  margin: 4px 2px;
+  border-radius: 2px;
+  transition-property: color, background-color;
+  transition-duration: 0.2s;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+
+#workspaces button:hover {
+  background: @surface0;
+}
+
+#workspaces button.active {
+  background: @surface0;
+  border-bottom: 2px solid @teal;
+}
+
+#taskbar {
+  margin: 4px 0px;
+  background-color: transparent;
+}
+
+#taskbar button {
+  border-radius: 2px;
+  min-height: 32px;
+  margin: 0 2px;
+  min-width: 0px;
+  padding: 0px 4px;
+}
+
+#taskbar button:hover,
+#taskbar button.active {
+  background: @surface1;
+}
+
+#mpris {
+  min-width: 32px;
+  min-height: 32px;
+  border-radius: 2px;
+  margin: 4px 2px;
+}
+#mpris:hover {
+  background-color: @surface0;
+}
+
+#cava {
+  padding: 0px 0px;
+  margin: 9px 0px;
+  font-family: monospace;
+  background: #94e2d5;
+  background: linear-gradient(
+    0deg,
+    rgba(148, 226, 213, 0) 0%,
+    rgba(137, 220, 235, 0) 6%,
+    rgba(137, 220, 235, 1) 6%,
+    rgba(116, 199, 236, 1) 24%,
+    rgba(137, 180, 250, 1) 36%,
+    rgba(203, 166, 247, 1) 48%,
+    rgba(245, 194, 231, 1) 60%,
+    rgba(235, 160, 172, 1) 72%,
+    rgba(243, 139, 168, 1) 92%,
+    rgba(243, 139, 168, 0) 92%,
+    rgba(243, 139, 168, 0) 100%
+  );
+  color: @base;
+  text-shadow: 0px -2px 0px rgba(0, 0, 0, 0.377);
+}
+
+#tray {
+  margin: 4px 2px;
+  min-width: 32px;
+  min-height: 32px;
+  border-radius: 2px;
+}
+#tray > * > image {
+  margin: 0px;
+  min-height: 32px;
+  min-width: 32px;
+  border-radius: 2px;
+}
+#tray > widget {
+  border-radius: 2px;
+}
+#tray > widget:hover {
+  background-color: @surface0;
+}
+
+#pulseaudio {
+  min-width: 32px;
+  min-height: 32px;
+  border-radius: 2px;
+  margin: 4px 2px;
+}
+#pulseaudio:hover {
+  background-color: @surface0;
+}
+
+#backlight {
+  min-width: 32px;
+  min-height: 32px;
+  border-radius: 2px;
+  margin: 4px 2px;
+}
+
+#power-profiles-daemon {
+  min-height: 32px;
+  min-width: 32px;
+  border-radius: 2px;
+  margin: 4px 2px;
+}
+#power-profiles-daemon:hover {
+  background-color: @surface0;
+}
+
+#power-profiles-daemon.performance {
+  color: @red;
+}
+
+#power-profiles-daemon.balanced {
+  color: @blue;
+}
+
+#power-profiles-daemon.power-saver {
+  color: @green;
+}
+
+#battery {
+  margin: 4px;
+  border-radius: 2px;
+  min-width: 32px;
+  background-color: transparent;
+}
+#battery.good {
+  color: @green;
+}
+#battery.warning {
+  color: @yellow;
+}
+#battery.critical {
+  color: @red;
+}
+
+#clock {
+  margin: 4px;
+  padding: 0 10px;
+  border-radius: 2px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+decoration {
+  margin: 0;
+  padding: 0;
+  border-radius: 4px;
+  border: 1px solid @base;
+}
+
+menu {
+  border-radius: 4px;
+  background-color: @crust;
+  padding: 4px;
+}
+menu menuitem {
+  padding: 4px 8px;
+  border-radius: 2px;
+}
+menu menuitem:hover {
+  background-color: @surface0;
+}
+
+separator {
+  background-color: @base;
+  min-height: 2px;
+  border-radius: 2px;
+  margin: 4px 0;
+}
+
+separator + separator {
+  opacity: 0;
+  min-height: 0px;
+  margin: 0;
+}
+
+separator:last-child {
+  margin-bottom: 0;
+}
