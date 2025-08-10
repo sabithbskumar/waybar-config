@@ -1,5 +1,9 @@
 # waybar-config
 
+## Screenshot
+
+<img width="1920" height="120" alt="wayabar-screenshot" src="https://github.com/user-attachments/assets/e95bf28a-59e4-4ef7-ae3d-ded6dc1bd750" />
+
 ## Installation
 
 1. Clone the repository:
