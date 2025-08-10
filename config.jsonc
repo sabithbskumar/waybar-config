@@ -16,7 +16,6 @@
       "clock"
     ],
     "custom/menu": {
-      "on-click": "wofi --show drun",
       "format": "󰣇",
       "tooltip": false,
       "menu": "on-click-right",
