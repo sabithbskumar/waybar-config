@@ -4,7 +4,8 @@
     "height": 40,
     "margin": "0 10 10 10",
     "reload_style_on_change": true,
-    "modules-left": ["custom/menu", "hyprland/workspaces", "wlr/taskbar"],
+    "modules-left": ["custom/menu", "wlr/taskbar"],
+    "modules-center": ["hyprland/workspaces"],
     "modules-right": [
       "mpris",
       "cava",
@@ -30,16 +31,18 @@
       }
     },
     "hyprland/workspaces": {
+      "format": "",
       "persistent-workspaces": {
         "1": [],
         "2": [],
         "3": [],
-        "4": []
+        "4": [],
+        "5": []
       }
     },
     "wlr/taskbar": {
       "format": "{icon}",
-      "icon-size": 26,
+      "icon-size": 24,
       "tooltip-format": "{title}",
       "on-click": "activate",
       "on-click-middle": "close"
